@@ -1,9 +1,12 @@
-a=int(input("Enter the starting Number: "))
-b=int(input("Enter the Final Number: "))
+a=int(input("Enter the 3 digit Number: "))
+b=int(input("Enter the 3 digit Number: "))
 for num in range(a,b+1):
-    if num>1 :
-       for i in range(2,num):
-           if(num%i)==0:
-               break;
-       else:
-           print(num)
+    order=len(str(num))
+    sum=0
+    temp=num
+    while temp>0:
+        digit=temp%10
+        sum=sum+digit**order
+        temp//=10
+    if num==sum:
+        print(num)
